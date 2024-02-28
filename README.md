@@ -1,17 +1,12 @@
 1)My partner and I want to come by each of stores in person and meet the manages. Please send manger’s names at each store with the full address of each property street address, district, city and country please
 
- select s.first_name as manager_first_name,s.last_name as manager_last_name,a.address,a.district,c.city,co.country
+select s.first_name as manager_first_name,s.last_name as manager_last_name,
+a.address,a.district,c.city,co.country
 from store st left join staff s on st.manager_staff_id=s.staff_id
 left join address a on st.address_id=a.address_id
 left join city c on a.city_id=c.city_id
 left join country co on c.country_id=co.country_id;
 
-select i.store_id, i.inventory_id,f.title,f.rating,f.rental_rate, f.replacement_cost 
-from inventory i left join film f
-on i.film_id=f.film_id;
-
-
- 
 
 2)To get a better understanding of all the inventory that would come along with the business.
 Please pull together a list of each inventory item you have stocked, including  the store_id number,
